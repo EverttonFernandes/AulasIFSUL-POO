@@ -19,6 +19,15 @@ public abstract class Curso {
         this.disciplinas = new ArrayList<>();
     }
 
+    // Sobrecarga de métodos: Construtor sobrecarregado que aceita uma lista de disciplinas
+    protected Curso(String nome, int cargaHoraria, String grauDeEnsino, boolean temTrabalhoDeConclusaoDeCurso, List<String> disciplinas) {
+        this.nome = nome;
+        this.cargaHoraria = cargaHoraria;
+        this.grauDeEnsino = grauDeEnsino;
+        this.temTrabalhoDeConclusaoDeCurso = temTrabalhoDeConclusaoDeCurso;
+        this.disciplinas = disciplinas;
+    }
+
     // Herança: Método abstrato que deve ser implementado pelas subclasses
     protected abstract String emitirDiploma();
 

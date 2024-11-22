@@ -10,6 +10,11 @@ public class CursoTecnicoEmInformatica extends Curso {
         this.areaDeAtuacao = areaDeAtuacao;
     }
 
+    public CursoTecnicoEmInformatica(String areaDeAtuacao, boolean temTrabalhoDeConclusaoDeCurso, List<String> disciplinas) {
+        super("Técnico em Informática", 1200, "Técnico", temTrabalhoDeConclusaoDeCurso, disciplinas);
+        this.areaDeAtuacao = areaDeAtuacao;
+    }
+
     // Polimorfismo: Implementação específica do método abstrato emitirDiploma
     @Override
     public String emitirDiploma() {

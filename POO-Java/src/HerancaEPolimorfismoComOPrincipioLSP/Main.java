@@ -6,9 +6,11 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         // Curso Técnico
-
+        List<String> disciplinas = new ArrayList<>();
+        disciplinas.add("Historia");
+        disciplinas.add("Matemática");
         // Sobrecarga de métodos: Uso do construtor sobrecarregado que aceita uma lista de disciplinas
-        CursoTecnicoEmInformatica cursoTecnico = new CursoTecnicoEmInformatica("Tecnologia da Informação", false);
+        CursoTecnicoEmInformatica cursoTecnico = new CursoTecnicoEmInformatica("Tecnologia da Informação", false, disciplinas);
 
         // Adicionando disciplinas dinamicamente
         cursoTecnico.adicionarDisciplina("Segurança da Informação");
