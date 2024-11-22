@@ -29,8 +29,14 @@ public class Main {
         cursoSuperior.adicionarDisciplina("Desenvolvimento Fron End III");
         cursoSuperior.adicionarDisciplina("Desenvolvimento Back End III");
 
+        // Curso Superior
+        // Herança: Criando uma instância de uma subclasse (CursoSuperiorEmSistemasParaInternet) que herda de Curso
+        CursoDePosGraduacao posGraduacao = new CursoDePosGraduacao("Gestão de TI", 300, "PosGraduacao", true);
+
+        posGraduacao.adicionarDisciplina("Gestão de equipes");
+
         // Polimorfismo: Lista de cursos que contém objetos de diferentes subclasses tratados como a classe base (Curso)
-        List<Curso> cursos = List.of(cursoTecnico, cursoSuperior);
+        List<Curso> cursos = List.of(cursoTecnico, cursoSuperior, posGraduacao);
 
         // Polimorfismo: O método exibirInformacoes() é chamado para cada objeto,
         // mas a implementação específica de cada subclasse é executada
