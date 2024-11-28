@@ -6,22 +6,54 @@ import InterfacesEOPrincipioISP.ExemploReal.interfaces.Ligavel;
 import InterfacesEOPrincipioISP.ExemploReal.interfaces.Wifi;
 
 public class Carro extends Veiculo implements Ligavel, Desligavel, Wifi {
-    public Carro(String modelo) {
+    private final boolean temCombustivel;
+    private boolean ligado;
+
+    public Carro(String modelo, boolean temCombustivel) {
         super(modelo);
+        this.temCombustivel = temCombustivel;
+        this.ligado = false; // Carro começa desligado
     }
 
     @Override
     public void ligar() {
-        System.out.println("O carro " + modelo + " está se ligado!");
+        try {
+            if (!temCombustivel) {
+                throw new IllegalStateException("Erro: O carro " + modelo + " não pode ser ligado. Combustível insuficiente.");
+            }
+            if (ligado) {
+                throw new IllegalStateException("Erro: O carro " + modelo + " já está ligado.");
+            }
+            ligado = true;
+            System.out.println("O carro " + modelo + " está ligado!");
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void ligarWifi() {
-        System.out.println("O carro " + modelo + " está conectado ao Wi-Fi para usar Spotify e Waze.");
+        try {
+            if (!ligado) {
+                throw new IllegalStateException("Erro: O carro " + modelo + " não pode se conectar ao Wi-Fi, pois está desligado.");
+            }
+            System.out.println("O carro " + modelo + " está conectado ao Wi-Fi para usar Spotify e Waze.");
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
     public void desligar() {
-        System.out.println("O carro " + modelo + " está desligado!");
+        try {
+            if (!ligado) {
+                throw new IllegalStateException("Erro: O carro " + modelo + " já está desligado.");
+            }
+            ligado = false;
+            System.out.println("O carro " + modelo + " está desligado!");
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
+
