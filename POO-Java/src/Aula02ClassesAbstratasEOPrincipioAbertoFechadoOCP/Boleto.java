@@ -1,6 +1,6 @@
-package ClassesAbstratas;
+package Aula02ClassesAbstratasEOPrincipioAbertoFechadoOCP;
 
-import ClassesAbstratas.abstracao.Pagamento;
+import Aula02ClassesAbstratasEOPrincipioAbertoFechadoOCP.abstracao.Pagamento;
 
 public class Boleto extends Pagamento {
 

@@ -1,4 +1,4 @@
-package Aula01SegundoSemestre2024;
+package Aula01PrincipioDaResponsabilidadeUnicaERefatoracaoDaLojaOnlineSRP;
 
 public class Cliente {
     private String email;
